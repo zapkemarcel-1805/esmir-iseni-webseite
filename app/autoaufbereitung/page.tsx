@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import {
   CarIcon,
@@ -95,7 +96,33 @@ const faq = [
     a: "Sie senden zunächst eine unverbindliche Anfrage. Wir prüfen den gewünschten Termin und bestätigen ihn anschließend persönlich per E-Mail.",
   },
 ];
-
+const referenzen = [
+  {
+    image: "/images/autoaufbereitung/vw-up-schwarz.jpg",
+    title: "Kompaktfahrzeug",
+    text: "Sauberer und gepflegter Auftritt bis ins Detail.",
+  },
+  {
+    image: "/images/autoaufbereitung/audi-gruen.jpg",
+    title: "Sportliches Fahrzeug",
+    text: "Fahrzeugpflege mit Fokus auf Lack, Felgen und Gesamtbild.",
+  },
+  {
+    image: "/images/autoaufbereitung/bmw-rot.jpg",
+    title: "Premium-Fahrzeug",
+    text: "Ein hochwertiger Auftritt für besondere Fahrzeuge.",
+  },
+  {
+    image: "/images/autoaufbereitung/audi-suv-schwarz.jpg",
+    title: "SUV",
+    text: "Gründliche Pflege auch bei größeren Fahrzeugen.",
+  },
+  {
+    image: "/images/autoaufbereitung/ford-blau.jpg",
+    title: "Alltagsfahrzeug",
+    text: "Professionelle Pflege für Fahrzeuge des täglichen Gebrauchs.",
+  },
+];
 export default function AutoaufbereitungPage() {
   return (
     <main>
@@ -260,7 +287,60 @@ export default function AutoaufbereitungPage() {
           </div>
         </div>
       </section>
+      <section className="bg-ink py-20 text-white sm:py-24">
+        <div className="container-page">
+          <div className="max-w-2xl">
+            <span className="eyebrow">Referenzen</span>
 
+            <h2 className="mt-3 font-display text-3xl font-semibold sm:text-4xl">
+              Einblicke in unsere Aufbereitungen.
+            </h2>
+
+            <p className="mt-4 leading-relaxed text-silver/75">
+              Unterschiedliche Fahrzeuge, ein gemeinsames Ziel: ein sauberer,
+              gepflegter und hochwertiger Gesamteindruck.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {referenzen.map((fahrzeug) => (
+              <article
+                key={fahrzeug.image}
+                className="group overflow-hidden border border-white/10 bg-white/[0.035]"
+              >
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <Image
+                    src={fahrzeug.image}
+                    alt={`${fahrzeug.title} nach der Autoaufbereitung bei ESMIR ISENI`}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover transition duration-500 group-hover:scale-[1.04]"
+                  />
+                </div>
+
+                <div className="p-5">
+                  <h3 className="font-display text-lg font-semibold">
+                    {fahrzeug.title}
+                  </h3>
+
+                  <p className="mt-2 text-sm leading-relaxed text-silver/70">
+                    {fahrzeug.text}
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="mt-10 text-center">
+            <Link
+              href="/termin-buchen?service=autoaufbereitung"
+              className="btn-gold inline-block"
+            >
+              Eigene Aufbereitung anfragen
+            </Link>
+          </div>
+        </div>
+      </section>
       <section className="bg-ink/[0.025] py-20 sm:py-24">
         <div className="container-page">
           <span className="eyebrow">So läuft es ab</span>
