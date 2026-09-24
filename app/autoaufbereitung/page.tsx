@@ -220,17 +220,17 @@ export default function AutoaufbereitungPage() {
       </section>
 
       <section className="container-page py-20 sm:py-24">
-        <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+        <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div>
-            <span className="eyebrow">Echte Ergebnisse</span>
+            <span className="eyebrow">Einblick in unsere Arbeit</span>
             <h2 className="mt-3 font-display text-3xl font-semibold text-ink sm:text-4xl">
-              Vorher / Nachher – bald mit echten Kundenfahrzeugen.
+              Autoaufbereitung in Bewegung.
             </h2>
             <p className="mt-5 max-w-xl leading-relaxed text-ink/65">
-              Hier zeigen wir künftig reale Aufbereitungen aus unserem Betrieb.
-              Bis eigene Referenzbilder ausgewählt sind, verzichten wir bewusst
-              auf künstliche Vorher-Nachher-Fotos, die nicht unsere tatsächliche
-              Arbeit zeigen.
+              Ein echter Einblick aus unserem Arbeitsalltag: sorgfältige
+              Fahrzeugpflege, saubere Details und ein hochwertiger Gesamteindruck.
+              Weitere Vorher-Nachher-Aufnahmen und Referenzen ergänzen wir nach
+              und nach mit echten Kundenfahrzeugen.
             </p>
             <p className="mt-4 max-w-xl text-sm leading-relaxed text-ink/50">
               Sie haben bereits ein konkretes Fahrzeug? Senden Sie uns bei Ihrer
@@ -239,24 +239,23 @@ export default function AutoaufbereitungPage() {
             </p>
           </div>
 
-          <div className="relative overflow-hidden border border-ink/10 bg-ink p-8 text-white sm:p-10">
+          <div className="relative overflow-hidden border border-ink/10 bg-ink p-4 text-white sm:p-6">
             <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-gold/10 blur-3xl" />
-            <span className="eyebrow">Referenzen folgen</span>
-            <div className="mt-8 grid grid-cols-2 gap-3">
-              <div className="flex aspect-[4/3] items-end border border-white/10 bg-white/[0.035] p-4">
-                <span className="text-xs uppercase tracking-[0.18em] text-white/45">
-                  Vorher
-                </span>
-              </div>
-              <div className="flex aspect-[4/3] items-end border border-gold/30 bg-[radial-gradient(circle_at_70%_30%,rgba(212,175,101,0.18),transparent_55%)] p-4">
-                <span className="text-xs uppercase tracking-[0.18em] text-gold">
-                  Nachher
-                </span>
-              </div>
+            <div className="relative mx-auto max-w-sm overflow-hidden border border-white/10 bg-black shadow-2xl shadow-black/20">
+              <video
+                className="aspect-[9/16] h-auto w-full object-cover"
+                src="/videos/autoaufbereitung.mp4"
+                controls
+                muted
+                playsInline
+                preload="metadata"
+                aria-label="Video einer Autoaufbereitung bei ESMIR ISENI"
+              >
+                Ihr Browser unterstützt die Videowiedergabe nicht.
+              </video>
             </div>
-            <p className="mt-6 text-sm leading-relaxed text-silver/65">
-              Sobald echte Aufbereitungsfotos vorliegen, können sie hier direkt
-              als hochwertige Vorher-Nachher-Galerie ergänzt werden.
+            <p className="relative mt-4 text-center text-xs uppercase tracking-[0.18em] text-gold">
+              ESMIR ISENI · AUTOAUFBEREITUNG
             </p>
           </div>
         </div>
