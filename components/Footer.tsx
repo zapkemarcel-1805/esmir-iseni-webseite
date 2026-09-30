@@ -1,11 +1,13 @@
 import Link from "next/link";
 import Logo from "./Logo";
 import { business } from "@/config/business";
+import { FaInstagram, FaTiktok } from "react-icons/fa";
 
 export default function Footer() {
   return (
     <footer className="border-t border-white/10 bg-ink text-silver/90">
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-4">
+        
         <div>
           <Logo />
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-silver/70">
@@ -17,6 +19,7 @@ export default function Footer() {
           <h3 className="text-sm font-semibold tracking-wide text-white">
             Dienstleistungen
           </h3>
+
           <ul className="mt-4 space-y-2 text-sm">
             {business.services.map((s) => (
               <li key={s.id}>
@@ -25,6 +28,7 @@ export default function Footer() {
                 </Link>
               </li>
             ))}
+
             <li>
               <Link href="/termin-buchen" className="hover:text-gold">
                 Termin buchen
@@ -37,16 +41,23 @@ export default function Footer() {
           <h3 className="text-sm font-semibold tracking-wide text-white">
             Kontakt
           </h3>
+
           <ul className="mt-4 space-y-2 text-sm">
             <li>{business.address.street}</li>
+
             <li>
               {business.address.zip} {business.address.city}
             </li>
+
             <li>
-              <a href={business.contact.phoneHref} className="hover:text-gold">
+              <a
+                href={business.contact.phoneHref}
+                className="hover:text-gold"
+              >
                 {business.contact.phoneFormatted}
               </a>
             </li>
+
             <li>
               <a
                 href={`mailto:${business.contact.email}`}
@@ -55,6 +66,7 @@ export default function Footer() {
                 {business.contact.email}
               </a>
             </li>
+
             <li>
               <a
                 href={business.contact.whatsapp}
@@ -72,44 +84,55 @@ export default function Footer() {
           <h3 className="text-sm font-semibold tracking-wide text-white">
             Öffnungszeiten
           </h3>
+
           <p className="mt-4 text-sm leading-relaxed">
-            Montag bis Samstag<br />
-            {business.openingHours.from}-{business.openingHours.to} Uhr<br />
+            Montag bis Samstag
+            <br />
+            {business.openingHours.from}-{business.openingHours.to} Uhr
+            <br />
             Sonntag geschlossen
           </p>
-          <div className="mt-4 flex gap-4">
+
+          {/* SOCIAL MEDIA */}
+          <div className="mt-5 flex items-center gap-5">
             <a
               href={business.contact.instagram.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm hover:text-gold"
+              className="flex items-center gap-2 text-sm transition hover:text-gold"
               aria-label="Instagram"
             >
-              Instagram
+              <FaInstagram className="text-xl" />
+              <span>Instagram</span>
             </a>
+
             <a
               href={business.contact.tiktok.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm hover:text-gold"
+              className="flex items-center gap-2 text-sm transition hover:text-gold"
               aria-label="TikTok"
             >
-              TikTok
+              <FaTiktok className="text-lg" />
+              <span>TikTok</span>
             </a>
           </div>
         </div>
       </div>
 
+      {/* UNTERE FOOTER-LEISTE */}
       <div className="border-t border-white/10 px-5 py-6">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 text-xs text-silver/50 md:flex-row">
           <span>
             © {new Date().getFullYear()} {business.name}. Alle Rechte
             vorbehalten.
           </span>
+
           <div className="flex gap-4">
             <Link href="/impressum" className="hover:text-gold">
               Impressum
             </Link>
+
             <Link href="/datenschutz" className="hover:text-gold">
               Datenschutz
             </Link>
