@@ -121,6 +121,42 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* GOOGLE BEWERTUNGEN */}
+      <section className="bg-ink/[0.025] py-24">
+        <div className="container-page">
+          <div className="mx-auto max-w-3xl text-center">
+            <span className="eyebrow">Google Bewertungen</span>
+            <h2 className="mt-3 font-display text-3xl font-semibold text-ink sm:text-4xl">
+              Das sagen unsere Kunden
+            </h2>
+            <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-ink/65 sm:text-base">
+              Unser Google-Unternehmensprofil wird derzeit eingerichtet.
+              Sobald es freigeschaltet ist, zeigen wir hier unsere echten
+              Google-Bewertungen und Kundenstimmen.
+            </p>
+          </div>
+
+          <div className="mx-auto mt-10 max-w-2xl border border-ink/10 bg-white p-8 text-center shadow-sm">
+            <div
+              className="text-2xl tracking-[0.2em] text-gold"
+              aria-label="Fünf Sterne"
+            >
+              ★★★★★
+            </div>
+
+            <p className="mt-4 font-display text-xl font-semibold text-ink">
+              Google-Bewertungen folgen in Kürze
+            </p>
+
+            <p className="mx-auto mt-3 max-w-lg text-sm leading-relaxed text-ink/60">
+              Nach der Freischaltung des Unternehmensprofils verbinden wir
+              diesen Bereich mit Google und können dann Bewertung,
+              Bewertungsanzahl und ausgewählte Rezensionen anzeigen.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* STANDORT & KONTAKT */}
       <section className="container-page py-24">
         <div className="grid gap-12 md:grid-cols-2">
